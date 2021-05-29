@@ -8,8 +8,6 @@ require "active_support/core_ext/module/delegation"
 #
 # Attachments also have access to all methods from {ActiveStorage::Blob}[rdoc-ref:ActiveStorage::Blob].
 class ActiveStorage::Attachment < ActiveStorage::Record
-  self.table_name = "active_storage_attachments"
-
   belongs_to :record, polymorphic: true, touch: true
   belongs_to :blob, class_name: "ActiveStorage::Blob", autosave: true
 

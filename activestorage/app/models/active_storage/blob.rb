@@ -34,8 +34,6 @@ class ActiveStorage::Blob < ActiveStorage::Record
   include ActiveStorage::Blob::Identifiable
   include ActiveStorage::Blob::Representable
 
-  self.table_name = "active_storage_blobs"
-
   MINIMUM_TOKEN_LENGTH = 28
 
   has_secure_token :key, length: MINIMUM_TOKEN_LENGTH
